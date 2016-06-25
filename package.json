@@ -1,0 +1,30 @@
+{
+  "name": "peg-solitaire",
+  "version": "1.0.0",
+  "description": "A peg solitaire game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucgauer/peg-solitaire.git"
+  },
+  "keywords": [
+    "game",
+    "peg",
+    "solitaire",
+    "board",
+    "play"
+  ],
+  "author": "Lucas Gauer <lucgauer@gmail.com> (http://github.com/lucgauer)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucgauer/peg-solitaire/issues"
+  },
+  "homepage": "https://github.com/lucgauer/peg-solitaire#readme",
+  "devDependencies": {
+    "gulp-eslint": "^2.0.0",
+    "gulp-sass": "^2.3.2"
+  }
+}
