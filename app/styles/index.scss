@@ -1,0 +1,8 @@
+@import 'base/variables';
+@import 'base/mixins';
+
+.game-status {
+  @include block();
+
+  border-radius: $base-radius;
+}

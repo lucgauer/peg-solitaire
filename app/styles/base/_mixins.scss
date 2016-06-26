@@ -1,0 +1,13 @@
+@mixin block($highlight: false) {
+  @if ($highlight) {
+    background-color: $gray-dark;
+    color: $gray-light;
+  }
+  @else {
+    background-color: #FFF;
+    color: $gray-dark;
+  }
+
+  border: 1px solid $gray;
+  padding: $base-space;
+}

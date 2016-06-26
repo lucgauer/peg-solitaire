@@ -1,0 +1,65 @@
+body {
+  background-color: $gray-light;
+  color: $gray-dark;
+  font-family: 'Tahoma', sans-serif;
+  margin: 0;
+}
+
+section, header {
+  margin-bottom: $base-space;
+}
+
+header {
+  @include block(true);
+}
+
+.game-title {
+  background-color: $brand-primary;
+  border: 2px dotted darken($brand-primary, 10%);
+  border-radius: $base-radius;
+  color: $gray-dark;
+  display: inline;
+  font-family: 'Courier', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding-left: $base-space;
+  padding-right: $base-space;
+}
+
+main {
+  margin: 0 $base-space;
+}
+
+footer {
+  @include block(true);
+
+  bottom: 0;
+  position: fixed;
+  text-align: right;
+  width: calc(100% - #{$base-space} * 2);
+}
+
+a {
+  color: $link-color;
+
+  &:not(:hover):not(:focus) {
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contain {
+  max-width: $screen-max - ($base-space * 2);
+}
+
+@media (min-width: $screen-max) {
+  .contain {
+    margin-left: calc(-#{$screen-max} / 2);
+    left: 50%;
+    position: relative;
+  }
+}

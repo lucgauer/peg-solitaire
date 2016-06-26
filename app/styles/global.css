@@ -1,0 +1,59 @@
+body {
+  background-color: #F4F4F4;
+  color: #333;
+  font-family: 'Tahoma', sans-serif;
+  margin: 0; }
+
+section, header {
+  margin-bottom: 15px; }
+
+header {
+  background-color: #333;
+  color: #F4F4F4;
+  border: 1px solid #999;
+  padding: 15px; }
+
+.game-title {
+  background-color: #F09C00;
+  border: 2px dotted #bd7b00;
+  border-radius: 4px;
+  color: #333;
+  display: inline;
+  font-family: 'Courier', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+main {
+  margin: 0 15px; }
+
+footer {
+  background-color: #333;
+  color: #F4F4F4;
+  border: 1px solid #999;
+  padding: 15px;
+  bottom: 0;
+  position: fixed;
+  text-align: right;
+  width: calc(100% - 15px * 2); }
+
+a {
+  color: #F09C00; }
+  a:not(:hover):not(:focus) {
+    text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0; }
+
+.contain {
+  max-width: 1170px; }
+
+@media (min-width: 1200px) {
+  .contain {
+    margin-left: calc(-1200px / 2);
+    left: 50%;
+    position: relative; } }
+
+/*# sourceMappingURL=global.css.map */
