@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/lucgauer/peg-solitaire#readme",
   "devDependencies": {
+    "browser-sync": "^2.13.0",
     "gulp-eslint": "^2.0.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
