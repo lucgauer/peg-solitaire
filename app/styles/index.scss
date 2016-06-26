@@ -3,6 +3,11 @@
 
 .game-status {
   @include block();
+  @include block-adjust();
 
   border-radius: $base-radius;
+
+  .title {
+    margin-bottom: 16px;
+  }
 }

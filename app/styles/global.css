@@ -20,10 +20,16 @@ header {
   color: #333;
   display: inline;
   font-family: 'Courier', sans-serif;
+  font-size: 2.25em;
   font-weight: normal;
   margin: 0;
+  letter-spacing: 4px;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  text-shadow: #d18800 1px 3px 2px; }
+  .game-title .one {
+    font-weight: 900;
+    color: #B22222; }
 
 main {
   margin: 0 15px; }

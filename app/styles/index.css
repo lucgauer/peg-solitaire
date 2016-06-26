@@ -4,5 +4,11 @@
   border: 1px solid #999;
   padding: 15px;
   border-radius: 4px; }
+  .game-status :first-child {
+    margin-top: 0; }
+  .game-status :last-child {
+    margin-bottom: 0; }
+  .game-status .title {
+    margin-bottom: 16px; }
 
 /*# sourceMappingURL=index.css.map */

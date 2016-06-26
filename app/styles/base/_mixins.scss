@@ -1,3 +1,4 @@
+// Define o estilo de um bloco em meio ao design proposto
 @mixin block($highlight: false) {
   @if ($highlight) {
     background-color: $gray-dark;
@@ -10,4 +11,14 @@
 
   border: 1px solid $gray;
   padding: $base-space;
+}
+
+// Ajusta as margens que sobram no inicio e fim do bloco
+@mixin block-adjust() {
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
 }
