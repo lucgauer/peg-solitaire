@@ -12,6 +12,18 @@ header {
   padding: 15px;
   margin-bottom: 15px; }
 
+a {
+  color: #F09C00; }
+  a:not(:hover):not(:focus) {
+    text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0; }
+
+.contain {
+  max-width: 1170px; }
+
 .title {
   border-left: 3px solid #F09C00;
   font-weight: normal;
@@ -44,26 +56,23 @@ footer {
   color: #F4F4F4;
   padding: 15px;
   bottom: 0;
+  margin-top: 15px;
   position: relative;
   text-align: right;
   width: calc(100% - 15px * 2); }
 
-a {
-  color: #F09C00; }
-  a:not(:hover):not(:focus) {
-    text-decoration: none; }
-
-ul {
-  list-style: none;
-  padding: 0; }
-
-.contain {
-  max-width: 1170px; }
+@media (min-width: 768px) {
+  .contain {
+    display: table;
+    position: relative;
+    width: 100%; }
+  .col {
+    display: table-cell;
+    float: left; } }
 
 @media (min-width: 1200px) {
   .contain {
     margin-left: calc(-1200px / 2);
-    left: 50%;
-    position: relative; } }
+    left: 50%; } }
 
 /*# sourceMappingURL=global.css.map */

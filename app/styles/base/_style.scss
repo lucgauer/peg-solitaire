@@ -15,6 +15,23 @@ header {
   margin-bottom: $base-space;
 }
 
+a {
+  color: $link-color;
+
+  &:not(:hover):not(:focus) {
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contain {
+  max-width: $screen-contain-min - ($base-space * 2);
+}
+
 .title {
   border-left: 3px solid $brand-primary;
   font-weight: normal;
@@ -50,32 +67,27 @@ footer {
   @include block(true);
 
   bottom: 0;
+  margin-top: $base-space;
   position: relative;
   text-align: right;
   width: calc(100% - #{$base-space} * 2);
 }
 
-a {
-  color: $link-color;
+@media (min-width: $screen-desktop-min) {
+  .contain {
+    display: table;
+    position: relative;
+    width: 100%;
+  }
 
-  &:not(:hover):not(:focus) {
-    text-decoration: none;
+  .col {
+    display: table-cell;
+    float: left;
   }
 }
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contain {
-  max-width: $screen-max - ($base-space * 2);
-}
-
-@media (min-width: $screen-max) {
+@media (min-width: $screen-contain-min) {
   .contain {
-    margin-left: calc(-#{$screen-max} / 2);
+    margin-left: calc(-#{$screen-contain-min} / 2);
     left: 50%;
-    position: relative;
   }
 }

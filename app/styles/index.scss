@@ -47,12 +47,10 @@
 
 @media (min-width: $screen-desktop-min) {
   #game-main {
-    float: right;
     width: calc(70% - (#{$base-space} * 4) - 2px);
   }
 
   #game-status {
-    float: right;
     width: calc(30% - (#{$base-space} * 4) - 2px);
   }
 }
