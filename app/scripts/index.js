@@ -1,13 +1,35 @@
 'use strict';
 
+// TODO tratar erros
 // Jogo de resta um
 (function () {
-  // var pegSolitaire =
+
+  // Prototipos
+  function Board () {
+    this.holes = [];
+  }
+
+  function Hole () {
+    this.top;
+    this.right;
+    this.bottom;
+    this.left;
+  }
+
+  function Peg () {
+    /**
+     * @return boolean Validade do movimento
+     */
+    this.move = function () {};
+  }
+
+  var playing = false;
 
   // Tempo decorrido desde o inicio da partida em segundos
   var secondsElapsed = 0,
     timeElapsedEl = document.querySelector('.game-time-elapsed'),
-    timeCounter = function () {
+    timer,
+    timerDisplay = function () {
       secondsElapsed++;
 
       var time = '',
@@ -32,5 +54,29 @@
       timeElapsedEl.innerHTML = time;
     };
 
-  window.setInterval(timeCounter, 1000);
+  var play = function () {
+    if (playing) return;
+
+    timer = window.setInterval(timerDisplay, 1000);
+
+      gamePlayEl.style.display = 'none';
+      gameRestartEl.style.display = 'inline-block';
+
+    playing = true;
+  },
+    restart = function () {
+      gamePlayEl.style.display = 'inline-block';
+      gameRestartEl.style.display = 'none';
+
+      window.clearInterval(timer);
+      timeElapsedEl.innerHTML = '';
+      secondsElapsed = 0;
+
+      playing = false;
+    },
+    gamePlayEl = document.querySelector('.game-play'),
+    gameRestartEl = document.querySelector('.game-restart');
+
+  gamePlayEl.addEventListener('click', play);
+  gameRestartEl.addEventListener('click', restart);
 })();
