@@ -34,10 +34,8 @@
 
 @media (min-width: 768px) {
   #game-main {
-    float: right;
     width: calc(70% - (15px * 4) - 2px); }
   #game-status {
-    float: right;
     width: calc(30% - (15px * 4) - 2px); } }
 
 /*# sourceMappingURL=index.css.map */

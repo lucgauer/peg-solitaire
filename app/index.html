@@ -13,11 +13,21 @@
   </head>
   <body>
     <header>
-      <h1 class="contain title game-title">Resta&nbsp;<span class="one">1</span>!</h1>
+      <div class="contain">
+        <h1 class="title game-title">Resta&nbsp;<span class="one">1</span>!</h1>
+      </div>
     </header>
 
     <main class="contain">
-      <section id="game-status">
+      <section id="game-main" class="col">
+        <h2 class="title">Tabuleiro</h2>
+
+        <div class="game-board">
+          <button role="button" class="game-play" title="Jogar"></button>
+        </div>
+      </section>
+
+      <section id="game-status" class="col">
         <h2 class="title">Estatísticas</h2>
 
         <ul>
@@ -25,14 +35,6 @@
           <li>Movimentos realizados: <span></span></li>
           <li>Peças restantes: <span></span></li>
         </ul>
-      </section>
-
-      <section id="game-main">
-        <h2 class="title">Tabuleiro</h2>
-
-        <div class="game-board">
-          <button role="button" class="game-play" title="Jogar"></button>
-        </div>
       </section>
     </main>
 
