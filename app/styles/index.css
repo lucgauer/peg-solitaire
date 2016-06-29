@@ -1,5 +1,6 @@
 .game-board {
   background-color: #999;
+  position: relative;
   width: 100%;
   height: 400px; }
 
@@ -24,6 +25,15 @@
     margin-left: -45px;
     position: absolute;
     top: 50%; }
+
+.game-restart {
+  background-color: #F09C00;
+  border: none;
+  display: none;
+  font-size: 1.25em;
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 #game-main, #game-status {
   background-color: #FFF;
