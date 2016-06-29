@@ -9,16 +9,11 @@
     color: $gray-dark;
   }
 
-  border: 1px solid $gray;
   padding: $base-space;
 }
 
-// Ajusta as margens que sobram no inicio e fim do bloco
-@mixin block-adjust() {
-  :first-child {
-    margin-top: 0;
-  }
-  :last-child {
-    margin-bottom: 0;
-  }
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 100%;
 }

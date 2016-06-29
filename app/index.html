@@ -11,20 +11,29 @@
     <link rel="stylesheet" media="all" href="styles/index.css">
     <link rel="shortcut icon" href="favicon.ico">
   </head>
-  <body class="game">
+  <body>
     <header>
-      <h1 class="contain game-title">Resta&nbsp;um</h1>
+      <h1 class="contain title game-title">Resta&nbsp;<span class="one">1</span>!</h1>
     </header>
 
     <main class="contain">
-      <div class="game-status">
-        <h2>Estatísticas</h2>
+      <section id="game-status">
+        <h2 class="title">Estatísticas</h2>
+
         <ul>
-          <li>Tempo gasto: <time></time></li>
+          <li>Tempo gasto: <time class="game-time-elapsed">0s</time></li>
           <li>Movimentos realizados: <span></span></li>
           <li>Peças restantes: <span></span></li>
         </ul>
-      </div>
+      </section>
+
+      <section id="game-main">
+        <h2 class="title">Tabuleiro</h2>
+
+        <div class="game-board">
+          <button role="button" class="game-play" title="Jogar"></button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -32,5 +41,7 @@
         Desenvolvido por <a href="//github.com/lucgauer">Lucas&nbsp;Gauer</a>
       </div>
     </footer>
+
+    <script src="scripts/index.js"></script>
   </body>
 </html>

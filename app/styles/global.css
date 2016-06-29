@@ -2,16 +2,23 @@ body {
   background-color: #F4F4F4;
   color: #333;
   font-family: 'Tahoma', sans-serif;
-  margin: 0; }
-
-section, header {
-  margin-bottom: 15px; }
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
 
 header {
   background-color: #333;
   color: #F4F4F4;
-  border: 1px solid #999;
-  padding: 15px; }
+  padding: 15px;
+  margin-bottom: 15px; }
+
+.title {
+  border-left: 3px solid #F09C00;
+  font-weight: normal;
+  font-size: 1.25em;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  text-transform: uppercase; }
 
 .game-title {
   background-color: #F09C00;
@@ -26,21 +33,18 @@ header {
   letter-spacing: 4px;
   padding-left: 15px;
   padding-right: 15px;
-  text-shadow: #d18800 1px 3px 2px; }
+  text-shadow: #d18800 1px 3px 2px;
+  text-transform: none; }
   .game-title .one {
     font-weight: 900;
     color: #B22222; }
 
-main {
-  margin: 0 15px; }
-
 footer {
   background-color: #333;
   color: #F4F4F4;
-  border: 1px solid #999;
   padding: 15px;
   bottom: 0;
-  position: fixed;
+  position: relative;
   text-align: right;
   width: calc(100% - 15px * 2); }
 
