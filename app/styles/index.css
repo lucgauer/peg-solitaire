@@ -49,9 +49,10 @@
   height: 70%;
   border-radius: 100%;
   background-color: #B22222;
-  position: relative;
   margin: -35% auto;
-  top: 50%; }
+  position: relative;
+  top: 50%;
+  box-shadow: rgba(51, 51, 51, 0.2) 0px 3px 2px; }
 
 .game-restart {
   background-color: #F09C00;

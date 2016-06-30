@@ -2,9 +2,6 @@
 
 // Jogo de resta um
 (function () {
-
-  // Prototipos
-
   /**
    * Cria a casa referenciando as casas diretas no tabuleiro.
    * @constructor
@@ -98,6 +95,7 @@
 
   // Tempo decorrido desde o inicio da partida em segundos
   var secondsElapsed = 0,
+    moviments = 0,
     timeElapsedEl = document.querySelector('.game-time-elapsed'),
     timer,
     timerDisplay = function () {
@@ -137,6 +135,7 @@
       holeEl,
       pegEl,
       invisibleHoleEl,
+      validDrops = {},
       populateInvisibleHole = function (qt) {
         while (qt) {
           invisibleHoleEl = document.createElement('div');
@@ -146,6 +145,21 @@
 
           qt--;
         }
+      },
+      updateBoardView = function () {
+        var holes = document.querySelectorAll('.hole:not(.invisible)');
+
+        for (var i in holes) {
+          if (holes[i].hole != undefined && holes[i].hole.peg == undefined) {
+            var pegEl = holes[i].children[0];
+
+            if (pegEl) {
+              pegEl.parentElement.removeChild(pegEl);
+            }
+          }
+        }
+
+        document.querySelector('.game-moviments').innerHTML = moviments;
       };
 
     for (var h in psBoard.holes) {
@@ -158,10 +172,79 @@
 
       holeEl = document.createElement('div');
       holeEl.className = 'hole';
+      holeEl.hole = psBoard.holes[h];
+      holeEl.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      });
+      holeEl.addEventListener('drop', function (e) {
+        var validDrop,
+          targetHole = e.target.hole;
+
+        if (e.target.hole) {
+          targetHole = e.target.hole;
+        } else {
+          targetHole = e.target.parentElement.hole;
+        }
+
+        for (var moveDirection in validDrops) {
+          validDrop = (targetHole == validDrops[moveDirection]);
+
+          var removeDirection;
+          if (validDrop) {
+            switch (moveDirection) {
+              case 'top':
+                removeDirection = 'bottom';
+                break;
+              case 'right':
+                removeDirection = 'left';
+                break;
+              case 'left':
+                removeDirection = 'right';
+                break;
+              case 'bottom':
+                removeDirection = 'top';
+                break;
+            }
+
+            // Remove peca pulada e joga a movida para o destino
+            var movedPegId = e.dataTransfer.getData("text"),
+              movedPeg = document.getElementById(movedPegId);
+
+            e.target.appendChild(movedPeg);
+            targetHole.peg = targetHole[removeDirection][removeDirection].peg;
+
+            targetHole[removeDirection][removeDirection].peg = undefined;
+            targetHole[removeDirection].peg = undefined;
+
+            moviments++;
+
+            // Atualiza view
+            updateBoardView();
+
+            return;
+          }
+        }
+
+        return false;
+      });
 
       if (psBoard.holes[h].peg) {
         pegEl = document.createElement('div');
         pegEl.className = 'peg';
+        pegEl.id = 'peg-' + h;
+        pegEl.setAttribute('draggable', 'true');
+
+        pegEl.addEventListener('dragstart', function (e) {
+          e.dataTransfer.setData('text/plain', e.target.id);
+
+          var actualHole = e.currentTarget.parentElement.hole;
+
+          validDrops = {};
+          if (actualHole.top && actualHole.top.top && actualHole.top.top.peg == undefined) validDrops.top = actualHole.top.top;
+          if (actualHole.right && actualHole.right.right && actualHole.right.right.peg == undefined) validDrops.right = actualHole.right.right;
+          if (actualHole.bottom && actualHole.bottom.bottom && actualHole.bottom.bottom.peg == undefined) validDrops.bottom = actualHole.bottom.bottom;
+          if (actualHole.left && actualHole.left.left && actualHole.left.left.peg == undefined) validDrops.left = actualHole.left.left;
+        });
 
         holeEl.appendChild(pegEl);
       }
@@ -176,7 +259,7 @@
       gameRestartEl.style.display = 'none';
 
       window.clearInterval(timer);
-      timeElapsedEl.innerHTML = '';
+      timeElapsedEl.innerHTML = '0s';
       secondsElapsed = 0;
 
       var gameEl = document.querySelectorAll('.hole');
