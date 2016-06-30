@@ -240,10 +240,30 @@
           var actualHole = e.currentTarget.parentElement.hole;
 
           validDrops = {};
-          if (actualHole.top && actualHole.top.top && actualHole.top.top.peg == undefined) validDrops.top = actualHole.top.top;
-          if (actualHole.right && actualHole.right.right && actualHole.right.right.peg == undefined) validDrops.right = actualHole.right.right;
-          if (actualHole.bottom && actualHole.bottom.bottom && actualHole.bottom.bottom.peg == undefined) validDrops.bottom = actualHole.bottom.bottom;
-          if (actualHole.left && actualHole.left.left && actualHole.left.left.peg == undefined) validDrops.left = actualHole.left.left;
+          
+          if (actualHole.top
+            && actualHole.top.peg != undefined
+            && actualHole.top.top
+            && actualHole.top.top.peg == undefined)
+            validDrops.top = actualHole.top.top;
+
+          if (actualHole.right
+            && actualHole.right.peg != undefined
+            && actualHole.right.right
+            && actualHole.right.right.peg == undefined)
+            validDrops.right = actualHole.right.right;
+
+          if (actualHole.bottom
+            && actualHole.bottom.peg != undefined
+            && actualHole.bottom.bottom
+            && actualHole.bottom.bottom.peg == undefined)
+            validDrops.bottom = actualHole.bottom.bottom;
+
+          if (actualHole.left
+            && actualHole.left.peg != undefined
+            && actualHole.left.left
+            && actualHole.left.left.peg == undefined)
+            validDrops.left = actualHole.left.left;
         });
 
         holeEl.appendChild(pegEl);
