@@ -65,9 +65,10 @@
   @include circle($size);
 
   background-color: $brand-secondary;
-  position: relative;
   margin: -$size / 2 auto;
+  position: relative;
   top: 50%;
+  box-shadow: rgba($gray-dark, 0.2) 0px 3px 2px;
 }
 
 .game-restart {
