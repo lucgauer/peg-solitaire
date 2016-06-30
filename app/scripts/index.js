@@ -89,6 +89,9 @@
     colRelate([2, 5, 10, 17, 24, 29, 32], this);
     colRelate([11, 18, 25], this);
     colRelate([12, 19, 26], this);
+
+    // Remove a peca central possibilitando o inicio do jogo
+    this.holes['16'].peg = undefined;
   }
 
   var playing = false;
@@ -130,7 +133,41 @@
     gamePlayEl.style.display = 'none';
     gameRestartEl.style.display = 'inline-block';
 
-    var psBoard = new PegSolitaireBoard();
+    var psBoard = new PegSolitaireBoard(),
+      holeEl,
+      pegEl,
+      invisibleHoleEl,
+      populateInvisibleHole = function (qt) {
+        while (qt) {
+          invisibleHoleEl = document.createElement('div');
+          invisibleHoleEl.className = 'invisible-hole';
+
+          gamePlayEl.parentNode.appendChild(invisibleHoleEl);
+
+          qt--;
+        }
+      };
+
+    for (var h in psBoard.holes) {
+      // Demarca o formato do tabuleiro
+      if (h == 0 || h == 6 || h == 27 ) {
+        populateInvisibleHole(2);
+      } else if (h == 3 || h == 30) {
+        populateInvisibleHole(4);
+      }
+
+      holeEl = document.createElement('div');
+      holeEl.className = 'hole';
+
+      if (psBoard.holes[h].peg) {
+        pegEl = document.createElement('div');
+        pegEl.className = 'peg';
+
+        holeEl.appendChild(pegEl);
+      }
+
+      gamePlayEl.parentNode.appendChild(holeEl);
+    }
 
     playing = true;
   },
