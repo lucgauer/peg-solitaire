@@ -1,8 +1,15 @@
 .game-board {
   background-color: #999;
   position: relative;
-  width: 100%;
-  height: 400px; }
+  width: 100%; }
+
+.game-board-container {
+  height: 400px;
+  margin-left: -200px;
+  left: 50%;
+  padding: 42px 0;
+  position: relative;
+  width: 400px; }
 
 .game-play {
   width: 200px;
@@ -26,14 +33,36 @@
     position: absolute;
     top: 50%; }
 
+.hole {
+  width: 12%;
+  height: 12%;
+  border-radius: 100%;
+  background-color: #F09C00;
+  display: inline-block;
+  margin: 1%; }
+
+.invisible {
+  visibility: hidden; }
+
+.peg {
+  width: 70%;
+  height: 70%;
+  border-radius: 100%;
+  background-color: #B22222;
+  position: relative;
+  margin: -35% auto;
+  top: 50%; }
+
 .game-restart {
   background-color: #F09C00;
   border: none;
   display: none;
   font-size: 1.25em;
+  height: 36px;
   position: absolute;
   right: 0;
-  top: 0; }
+  top: 0;
+  width: 36px; }
 
 #game-main, #game-status {
   background-color: #FFF;
