@@ -33,7 +33,7 @@
     position: absolute;
     top: 50%; }
 
-.hole, .invisible-hole {
+.hole {
   width: 12%;
   height: 12%;
   border-radius: 100%;
@@ -41,18 +41,17 @@
   display: inline-block;
   margin: 1%; }
 
-.invisible-hole {
+.invisible {
   visibility: hidden; }
 
 .peg {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   border-radius: 100%;
-  margin: auto;
+  background-color: #B22222;
   position: relative;
-  top: 50%;
-  margin-top: -40%;
-  background-color: #B22222; }
+  margin: -35% auto;
+  top: 50%; }
 
 .game-restart {
   background-color: #F09C00;

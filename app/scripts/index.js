@@ -140,7 +140,7 @@
       populateInvisibleHole = function (qt) {
         while (qt) {
           invisibleHoleEl = document.createElement('div');
-          invisibleHoleEl.className = 'invisible-hole';
+          invisibleHoleEl.className = 'invisible hole';
 
           gamePlayEl.parentNode.appendChild(invisibleHoleEl);
 
@@ -178,6 +178,14 @@
       window.clearInterval(timer);
       timeElapsedEl.innerHTML = '';
       secondsElapsed = 0;
+
+      var gameEl = document.querySelectorAll('.hole');
+
+      for (var c = gameEl.length-1; c >= 0; c--) {
+        if (gameEl[c].parentNode) {
+          gameEl[c].parentNode.removeChild(gameEl[c]);
+        }
+      }
 
       playing = false;
     },
