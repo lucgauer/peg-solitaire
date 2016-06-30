@@ -26,6 +26,12 @@
     position: absolute;
     top: 50%; }
 
+.hole {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #F09C00; }
+
 .game-restart {
   background-color: #F09C00;
   border: none;

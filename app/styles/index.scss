@@ -39,6 +39,12 @@
   }
 }
 
+.hole {
+  @include circle(30px);
+
+  background-color: $brand-primary;
+}
+
 .game-restart {
   background-color: $brand-primary;
   border: none;
