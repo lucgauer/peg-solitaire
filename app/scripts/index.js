@@ -97,6 +97,7 @@
   var secondsElapsed = 0,
     moviments = 0,
     timeElapsedEl = document.querySelector('.game-time-elapsed'),
+    movimentsEl = document.querySelector('.game-moviments'),
     timer,
     timerDisplay = function () {
       secondsElapsed++;
@@ -159,7 +160,7 @@
           }
         }
 
-        document.querySelector('.game-moviments').innerHTML = moviments;
+        movimentsEl.innerHTML = moviments;
       };
 
     for (var h in psBoard.holes) {
@@ -240,7 +241,7 @@
           var actualHole = e.currentTarget.parentElement.hole;
 
           validDrops = {};
-          
+
           if (actualHole.top
             && actualHole.top.peg != undefined
             && actualHole.top.top
@@ -280,6 +281,7 @@
 
       window.clearInterval(timer);
       timeElapsedEl.innerHTML = '0s';
+      movimentsEl.innerHTML = moviments = 0;
       secondsElapsed = 0;
 
       var gameEl = document.querySelectorAll('.hole');
