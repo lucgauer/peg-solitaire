@@ -64,6 +64,7 @@
   $size: 70%;
   @include circle($size);
 
+  cursor: move;
   background-color: $brand-secondary;
   margin: -$size / 2 auto;
   position: relative;
