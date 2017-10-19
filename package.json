@@ -4,7 +4,7 @@
   "description": "A peg solitaire game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "peg",
     "solitaire",
     "board",
-    "play"
+    "play",
+    "board"
   ],
   "author": "Lucas Gauer <lucgauer@gmail.com> (http://github.com/lucgauer)",
   "license": "ISC",
@@ -24,9 +25,18 @@
   },
   "homepage": "https://github.com/lucgauer/peg-solitaire#readme",
   "devDependencies": {
-    "browser-sync": "^2.13.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0"
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.5.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^7.1.4",
+    "bootstrap": "^4.0.0-beta"
   }
 }

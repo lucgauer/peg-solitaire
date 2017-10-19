@@ -9,6 +9,7 @@
    * @param {Hole} r Casa a direita
    * @param {Hole} b Casa abaixo
    * @param {Hole} l Casa a esquerda
+   * @param {Hole} p Peca
    */
   function Hole (t, r, b, l, p) {
     this.top = t;
@@ -299,4 +300,4 @@
 
   gamePlayEl.addEventListener('click', play);
   gameRestartEl.addEventListener('click', restart);
-})();
+}());

@@ -2,19 +2,17 @@
 @import 'base/mixins';
 
 .game-board {
-  background-color: $gray;
   position: relative;
-  width: 100%;
+  background-color: $gray-500;
 }
-.game-board-container {
-  $size: 400px;
 
-  height: $size;
-  margin-left: -$size / 2;
-  left: 50%;
-  padding: 42px 0;
+.game-board-container {
   position: relative;
-  width: $size;
+  width: $board-size;
+  height: $board-size;
+  margin-left: -$board-size / 2;
+  left: 50%;
+  padding: 16px 0;
 }
 
 // Botao jogar: circulo envolvendo um simbolo de tocar
@@ -24,14 +22,14 @@
 
   @include circle($circle-size);
 
+  position: relative;
+  top: 50%;
   left: 50%;
   margin-left: -$circle-size / 2;
   margin-top: -$circle-size / 2;
-  padding: 0;
-  position: relative;
-  top: 50%;
-  background: $brand-primary;
   border: 0;
+  padding: 0;
+  background: $brand-primary;
 
   &::before {
     border: $triangle-size / 2 solid transparent;
@@ -39,7 +37,8 @@
     border-right-width: 0;
     content: '';
     margin-top: -$triangle-size / 2;
-    // Para dispor o simbolo no meio do ciculo eh necessario posicionar o centro do triangulo compensando a diferenca entre seus lados
+    // Para dispor o simbolo no meio do ciculo eh necessario posicionar o centro do triangulo compensando a diferenca
+    // entre seus lados
     $triangle-offset: $triangle-size / 2;
     $triangle-offset: $triangle-offset - $triangle-offset / 4;
     margin-left: -$triangle-offset;
@@ -69,7 +68,7 @@
   margin: -$size / 2 auto;
   position: relative;
   top: 50%;
-  box-shadow: rgba($gray-dark, 0.2) 0px 3px 2px;
+  box-shadow: rgba($gray-800, .2) 0 3px 2px;
 }
 
 .game-restart {
@@ -82,21 +81,4 @@
   right: 0;
   top: 0;
   width: 36px;
-}
-
-#game-main, #game-status {
-  @include block();
-
-  border-radius: $base-radius;
-  margin: $base-space;
-}
-
-@media (min-width: $screen-desktop-min) {
-  #game-main {
-    width: calc(70% - (#{$base-space} * 4) - 2px);
-  }
-
-  #game-status {
-    width: calc(30% - (#{$base-space} * 4) - 2px);
-  }
 }

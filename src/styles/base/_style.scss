@@ -1,6 +1,6 @@
 body {
-  background-color: $gray-light;
-  color: $gray-dark;
+  background-color: $gray-200;
+  color: $gray-800;
   font-family: 'Tahoma', sans-serif;
   margin: 0;
 
@@ -10,8 +10,8 @@ body {
 }
 
 header {
-  @include block(true);
-
+  background-color: $gray-800;
+  color: $gray-200;
   margin-bottom: $base-space;
 }
 
@@ -28,10 +28,6 @@ ul {
   padding: 0;
 }
 
-.contain {
-  max-width: $screen-contain-min - ($base-space * 2);
-}
-
 .title {
   border-left: 3px solid $brand-primary;
   font-weight: normal;
@@ -44,8 +40,8 @@ ul {
 .game-title {
   background-color: $brand-primary;
   border: 2px dotted darken($brand-primary, 10%);
-  border-radius: $base-radius;
-  color: $gray-dark;
+  border-radius: $border-radius;
+  color: $gray-800;
   display: inline;
   font-family: 'Courier', sans-serif;
   font-size: 2.25em;
@@ -64,30 +60,11 @@ ul {
 }
 
 footer {
-  @include block(true);
-
+  color: $gray-200;
+  background-color: $gray-800;
   bottom: 0;
   margin-top: $base-space;
-  position: relative;
+  position: absolute;
   text-align: right;
-  width: calc(100% - #{$base-space} * 2);
-}
-
-@media (min-width: $screen-desktop-min) {
-  .contain {
-    display: table;
-    position: relative;
-    width: 100%;
-  }
-
-  .col {
-    display: table-cell;
-    float: left;
-  }
-}
-@media (min-width: $screen-contain-min) {
-  .contain {
-    margin-left: calc(-#{$screen-contain-min} / 2);
-    left: 50%;
-  }
+  width: 100%;
 }

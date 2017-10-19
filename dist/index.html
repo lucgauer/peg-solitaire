@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Resta um</title>
+    <meta name="author" content="Lucas Gauer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Um jogo de resta um">
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title game-title">Resta&nbsp;<span class="one">1</span>!</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <section id="game-main" class="col-xs-12 col-md-9">
+          <h2 class="title">Tabuleiro</h2>
+
+          <div class="game-board">
+            <div class="game-board-container">
+              <button class="game-play" title="Jogar"></button>
+            </div>
+            <button class="game-restart" title="Reiniciar">&#10060;</button>
+          </div>
+        </section>
+
+        <section id="game-status" class="col-xs-12 col-md-3">
+          <h2 class="title">Estatísticas</h2>
+
+          <ul>
+            <li>Tempo gasto:
+              <time class="game-time-elapsed">0s</time>
+            </li>
+            <li>Movimentos realizados: <span class="game-moviments"></span></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        Desenvolvido por <a href="//github.com/lucgauer/peg-solitaire">Lucas&nbsp;Gauer</a>
+      </div>
+    </footer>
+  <script type="text/javascript" src="app.js"></script></body>
+</html>

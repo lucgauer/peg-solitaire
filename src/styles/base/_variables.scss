@@ -1,0 +1,10 @@
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+
+// Cores
+$brand-primary:   #F09C00;
+$brand-secondary: #B22222;
+$link-color:      $brand-primary;
+
+// Base
+$base-space:  $grid-gutter-width / 2;
